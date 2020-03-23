@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), OfferListingAdapter.AdItemClickListene
     }
 
     private fun getOfferList() {
-        mainActivityViewModel.getNextOfferResponse().observe(this, Observer {
+        mainActivityViewModel.getOfferResponse().observe(this, Observer {
             when (it) {
                 is ApiSuccessResponse -> {
                     offerListAdapter.setOfferList(it.body.offers)
