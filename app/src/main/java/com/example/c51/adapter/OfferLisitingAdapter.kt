@@ -10,6 +10,11 @@ import com.example.c51.databinding.OfferListingLayoutBinding
 import com.example.c51.model.Offers
 import com.example.c51.util.Utils
 
+/**
+ * This adapter class is supporting 2 view holder.
+ * 1. For showing the offer list
+ * 2. For showing the loading animation at the end of recycler view
+ */
 class OfferListingAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
 
     companion object {
@@ -30,6 +35,10 @@ class OfferListingAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
         adItemClickListener = listener
     }
 
+    /**
+     * We have given the functionality to add the loader in the end of recycler view to show loading animation
+     * This function will add the loading animation at the end of recycler view at the time of pagination
+     */
     fun setLoadingLayout() {
         if (!offerList.isNullOrEmpty() && offerList[offerList.size - 1] != null) {
             offerList.add(null)
@@ -37,6 +46,10 @@ class OfferListingAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
         }
     }
 
+    /**
+     * We have given the functionality to add the loader in the end of recycler view to show loading animation
+     * This function will remove the loading animation at the end of recycler view at the time of pagination
+     */
     fun removeLoadingView() {
         if (!offerList.isNullOrEmpty() && offerList[offerList.size - 1] == null) {
             offerList.removeAt(offerList.size-1)
@@ -80,6 +93,10 @@ class OfferListingAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
         }
     }
 
+    /**
+     * We have given the functionality to add the loader in the end of recycler view to show loading animation
+     * This view holder class is for the loading animation
+     */
     private class LoadingViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         val progressBar: LottieAnimationView = itemView.findViewById(R.id.offer_list_loading)
