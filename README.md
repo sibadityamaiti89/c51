@@ -12,7 +12,7 @@ The ViewModel and the Utils have been unit tested.
 
 # Other Libraries used on the project
 
-1)Android architecture components (ViewModel, LiveData, Navigation Component, Data binding)
+1)Android architecture components (ViewModel, LiveData, Data binding)
 
 2)Glide (Image loading, rendering and caching)
 
